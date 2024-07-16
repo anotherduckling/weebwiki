@@ -1,66 +1,76 @@
 {
-  "type": "module",
-  "scripts": {
-    "postinstall": "nitropack prepare",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "api:prepare": "nitropack prepare",
-    "api:dev": "nitropack dev",
-    "api:build": "nitropack build",
-    "api:preview": "node .output/server/index.mjs",
-    "format": "prettier --cache -w .",
-    "og:dev": "x-satori -t ./.vitepress/theme/components/OgImageTemplate.vue -c ./.vitepress/hooks/satoriConfig.ts --dev"
-  },
-  "dependencies": {
-    "@fmhy/colors": "^0.0.11",
-    "@fmhy/components": "^0.0.2",
-    "@mdit/plugin-align": "^0.8.0",
-    "@mdit/plugin-figure": "^0.8.0",
-    "@mdit/plugin-img-lazyload": "^0.8.0",
-    "@mdit/plugin-img-size": "^0.8.0",
-    "@resvg/resvg-js": "^2.6.2",
-    "@vite-pwa/vitepress": "^0.4.0",
-    "fast-glob": "^3.3.2",
-    "itty-fetcher": "^0.9.4",
-    "markdown-it": "^14.1.0",
-    "medium-zoom": "^1.1.0",
-    "nitro-cors": "^0.7.0",
-    "nitropack": "^2.9.6",
-    "unocss": "0.59.0-beta.1",
-    "vitepress": "npm:@taskylizard/vitepress@1.1.1",
-    "vitepress-plugin-tabs": "^0.5.0",
-    "vue": "^3.4.21",
-    "workbox-window": "^7.0.0",
-    "x-satori": "^0.1.5",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@iconify-json/fluent-emoji": "^1.1.18",
-    "@iconify-json/fxemoji": "^1.1.8",
-    "@iconify-json/gg": "^1.1.9",
-    "@iconify-json/ic": "^1.1.17",
-    "@iconify-json/iconoir": "^1.1.42",
-    "@iconify-json/logos": "^1.1.42",
-    "@iconify-json/lucide": "^1.1.179",
-    "@iconify-json/material-symbols": "^1.1.76",
-    "@iconify-json/mdi": "^1.1.65",
-    "@iconify-json/mingcute": "^1.1.17",
-    "@iconify-json/octicon": "^1.1.53",
-    "@iconify-json/simple-icons": "^1.1.98",
-    "@iconify-json/twemoji": "^1.1.15",
-    "@iconify-json/uil": "^1.1.8",
-    "@iconify/utils": "^2.1.22",
-    "@nolebase/vitepress-plugin-git-changelog": "^2.2.2",
-    "@types/node": "^20.12.4",
-    "prettier": "^3.2.5"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "search-insights"
-      ]
-    }
-  }
+	"type": "module",
+	"scripts": {
+		"postinstall": "nitropack prepare",
+		"docs:dev": "vitepress dev",
+		"docs:build": "vitepress build",
+		"docs:preview": "vitepress preview",
+		"api:prepare": "nitropack prepare",
+		"api:dev": "nitropack dev",
+		"api:build": "nitropack build",
+		"api:preview": "node .output/server/index.mjs",
+		"format": "prettier --cache -w .",
+		"og:dev": "x-satori -t ./.vitepress/theme/components/OgImageTemplate.vue -c ./.vitepress/hooks/satoriConfig.ts --dev"
+	},
+	"dependencies": {
+		"@fmhy/colors": "^0.0.11",
+		"@fmhy/components": "^0.0.2",
+		"@mdit/plugin-align": "^0.8.0",
+		"@mdit/plugin-figure": "^0.8.0",
+		"@mdit/plugin-img-lazyload": "^0.8.0",
+		"@mdit/plugin-img-size": "^0.8.0",
+		"@resvg/resvg-js": "^2.6.2",
+		"@tanstack/vue-query": "^5.49.0",
+		"@vite-pwa/vitepress": "^0.4.0",
+		"@vueuse/core": "^10.7.2",
+		"axios": "^1.6.5",
+		"element-plus": "^2.5.2",
+		"fast-glob": "^3.3.2",
+		"itty-fetcher": "^0.9.4",
+		"lodash.groupby": "^4.6.0",
+		"markdown-it": "^14.1.0",
+		"markdown-it-shortcode-tag": "^1.1.0",
+		"medium-zoom": "^1.1.0",
+		"nitro-cors": "^0.7.0",
+		"nitropack": "^2.9.6",
+		"stylus": "^0.63.0",
+		"unocss": "0.59.0-beta.1",
+		"unplugin-element-plus": "^0.8.0",
+		"v-lazy-image": "^2.1.1",
+		"vite": "^5.3.2",
+		"vitepress": "npm:@taskylizard/vitepress@1.1.1",
+		"vitepress-plugin-tabs": "^0.5.0",
+		"vue": "^3.4.21",
+		"workbox-window": "^7.0.0",
+		"x-satori": "^0.1.5",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@iconify-json/fluent-emoji": "^1.1.18",
+		"@iconify-json/fxemoji": "^1.1.8",
+		"@iconify-json/gg": "^1.1.9",
+		"@iconify-json/ic": "^1.1.17",
+		"@iconify-json/iconoir": "^1.1.42",
+		"@iconify-json/logos": "^1.1.42",
+		"@iconify-json/lucide": "^1.1.179",
+		"@iconify-json/material-symbols": "^1.1.76",
+		"@iconify-json/mdi": "^1.1.65",
+		"@iconify-json/mingcute": "^1.1.17",
+		"@iconify-json/octicon": "^1.1.53",
+		"@iconify-json/simple-icons": "^1.1.98",
+		"@iconify-json/twemoji": "^1.1.15",
+		"@iconify-json/uil": "^1.1.8",
+		"@iconify/utils": "^2.1.22",
+		"@types/lodash.groupby": "^4.6.9",
+		"@types/node": "^20.12.4",
+		"prettier": "^3.2.5"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"@algolia/client-search",
+				"search-insights"
+			]
+		}
+	}
 }

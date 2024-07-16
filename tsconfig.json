@@ -15,8 +15,19 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "vite-plugin-pwa/client", "vitepress"]
+    "sourceMap": true,
+    "isolatedModules": true,
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["**/.vitepress/**/*.ts", "**/.vitepress/**/*.mts", "**/.vitepress/**/*.vue"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.vue",
+    "**/*.tsx",
+    "**/*.ts",
+    ".vitepress/**/**/*.ts",
+    ".vitepress/**/**/*.tsx",
+    ".vitepress/**/**/*.vue"
+  ],
+  "exclude": ["**/node_modules/**", "dist/**"],
+  "extensions": [".js", ".ts", ".tsx", ".jsx", ".vue"],
+  "allowSyntheticDefaultImports": true
 }

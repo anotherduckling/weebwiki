@@ -1,5 +1,7 @@
-/* eslint-disable ts/consistent-type-imports */
+declare module "v-lazy-image";
 declare module "*.vue" {
-  const component: import("vue").Component;
-  export default component;
+  import type { Component } from "vue";
+
+  const _default: Component;
+  export default _default;
 }

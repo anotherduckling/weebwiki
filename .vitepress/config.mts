@@ -5,6 +5,7 @@ import { imgLazyload } from "@mdit/plugin-img-lazyload";
 import { align } from "@mdit/plugin-align";
 import { imgSize } from "@mdit/plugin-img-size";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
+import ElementPlus from "unplugin-element-plus/vite";
 import UnoCSS from "unocss/vite";
 import { generateImages, generateMeta } from "./hooks";
 import { emojiRender, defs, movePlugin, search, hostname, socials } from "./configs";
@@ -35,13 +36,13 @@ export default defineConfig({
     ["link", { rel: "mask-icon", href: "/asset/inaread.png", color: "#56b4fc" }],
     // prettier-ignore
     [
-      "meta",
-      {
-        name: "keywords",
-        content:
-          "Anime, Anime Piracy, Manga, Manga Piracy, VTuber, Hentai, JPOP, Music, Japan, Learning Japanese, Weeb, Otaku",
-      },
-    ],
+			"meta",
+			{
+				name: "keywords",
+				content:
+					"Anime, Anime Piracy, Manga, Manga Piracy, VTuber, Hentai, JPOP, Music, Japan, Learning Japanese, Weeb, Otaku",
+			},
+		],
     [
       "link",
       {
@@ -83,12 +84,18 @@ export default defineConfig({
       exclude: ["workbox-window", "@nolebase/vitepress-plugin-git-changelog/client"],
     },
     ssr: {
-      noExternal: ["@nolebase/vitepress-plugin-git-changelog", "@nolebase/ui", "@fmhy/components"],
+      noExternal: [
+        "element-plus",
+        "@nolebase/vitepress-plugin-git-changelog",
+        "@nolebase/ui",
+        "@fmhy/components",
+      ],
     },
     plugins: [
       UnoCSS({
         configFile: "../unocss.config.ts",
       }),
+      ElementPlus({}),
       {
         name: "custom:adjust-order",
         configResolved(c) {

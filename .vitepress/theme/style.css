@@ -77,6 +77,10 @@
   --vp-custom-block-danger-text-deep: rgba(248, 113, 113, 1);
 }
 
+body {
+  --el-color-primary: var(--vp-c-brand);
+}
+
 .vp-doc a {
   color: var(--vp-c-brand);
   text-decoration: underline;

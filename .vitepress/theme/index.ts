@@ -2,8 +2,9 @@ import { h } from "vue";
 import Theme from "vitepress/theme";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "./style.css";
+import "element-plus/theme-chalk/dark/css-vars.css";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
-import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
+import { VueQueryPlugin } from "@tanstack/vue-query";
 import { createMediumZoomProvider } from "./composables";
 import Button from "./components/Button.vue";
 import SidebarCard from "./components/SidebarCard.vue";
@@ -11,6 +12,7 @@ import Tooltip from "./components/Tooltip.vue";
 import Authors from "./components/Authors.vue";
 import Components from "@fmhy/components";
 import AnnouncementPill from "./components/AnnouncementPill.vue";
+import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
 import "virtual:uno.css";
 
 export default {
@@ -22,7 +24,8 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     });
   },
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, router, _siteData }) {
+    app.use(VueQueryPlugin);
     enhanceAppWithTabs(app);
     app.component("Button", Button);
     app.component("Authors", Authors);
