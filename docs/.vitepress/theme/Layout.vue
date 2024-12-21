@@ -25,7 +25,7 @@ import {
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import { usePreferredReducedMotion } from '@vueuse/core'
 import { ref, onMounted, onUnmounted } from 'vue'
-import { type Vec2D, v2add, v2mag, v2norm, v2smul, v2sub } from './math'
+import { type Vec2D, v2add, v2mag, v2norm, v2smul, v2sub } from './utils/math'
 
 // Respect user's reduced motion preferences
 const prefs = usePreferredReducedMotion()

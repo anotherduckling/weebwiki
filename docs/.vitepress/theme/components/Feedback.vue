@@ -19,7 +19,7 @@ import {
   feedbackOptions,
   type FeedbackType,
   getFeedbackOption
-} from '../../types/Feedback'
+} from '../types/Feedback'
 import { useRouter, withBase } from 'vitepress'
 
 const props = defineProps<{
@@ -159,27 +159,28 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
 
 <template>
   <template v-if="props.heading">
-    <button
-      @click="toggleCard()"
+    <button @click="toggleCard()"
       class="bg-$vp-c-default-soft hover:bg-$vp-c-default-soft/40 text-primary border-$vp-c-default-soft hover:border-primary ml-3 inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border-2 border-solid px-1.5 py-1.5 text-sm font-medium transition-all duration-300 sm:h-6">
-      <span :class="isCardShown === false ? `i-lucide:message-circle` : `i-lucide:circle-x`" />
+      <span :class="isCardShown === false
+          ? `i-lucide:message-circle`
+          : `i-lucide:circle-x`
+        " />
     </button>
   </template>
   <template v-else>
     <button
       class="bg-$vp-c-default-soft hover:bg-$vp-c-default-soft/40 text-primary px2 py1 border-$vp-c-default-soft hover:border-primary mt-2 select-none rounded border-2 border-solid font-bold transition-all duration-300"
       @click="toggleCard()">
-      <span
-        :class="
-          isCardShown === false ? `i-lucide:message-circle mr-2` : `i-lucide:circle-x mr-2`
+      <span :class="isCardShown === false
+          ? `i-lucide:message-circle mr-2`
+          : `i-lucide:circle-x mr-2`
         " />
       <span>Send Feedback</span>
     </button>
   </template>
 
   <Transition name="fade" mode="out-in">
-    <div
-      v-if="isCardShown"
+    <div v-if="isCardShown"
       class="border-$vp-c-divider bg-$vp-c-bg-alt b-rd-4 m-[2rem 0] step mt-4 border-2 border-solid p-6">
       <Transition name="fade" mode="out-in">
         <div v-if="!feedback.type" class="step">
@@ -192,11 +193,7 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button
-              v-for="item in feedbackOptions"
-              :key="item.value"
-              class="btn"
-              @click="handleSubmit(item.value)">
+            <button v-for="item in feedbackOptions" :key="item.value" class="btn" @click="handleSubmit(item.value)">
               <span>{{ item.label }}</span>
             </button>
           </div>
@@ -224,8 +221,8 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
               </summary>
               <ol>
                 <li>
-                  Websites that are only or primarily for generative AI (Chatbot, roleplaying bot,
-                  ai art generator etc.)
+                  Websites that are only or primarily for generative AI
+                  (Chatbot, roleplaying bot, ai art generator etc.)
                 </li>
                 <li>
                   Sites that
@@ -238,17 +235,14 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
                 </li>
                 <li>Adult content sites similar to OnlyFans</li>
                 <li>
-                  Software that's too general (for example Windows OS related or Tweaking for
-                  privacy)
+                  Software that's too general (for example Windows OS related or
+                  Tweaking for privacy)
                 </li>
                 <li>Sites focused on lolicon or furry stuff</li>
                 <li>
                   Sites listed in
-                  <a
-                    href="https://fmhy.net/unsafesites"
-                    class="text-primary text-underline font-semibold"
-                    >FMHY unsafe list</a
-                  >
+                  <a href="https://fmhy.net/unsafesites" class="text-primary text-underline font-semibold">FMHY unsafe
+                    list</a>
                 </li>
               </ol>
             </details>
@@ -260,33 +254,27 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
               <ol>
                 <li>Closed source software (with good FOSS alternatives)</li>
                 <li>
-                  Sites that only use hosters such Katfile, Nitroflare, DDownload and Rapidgator
+                  Sites that only use hosters such Katfile, Nitroflare,
+                  DDownload and Rapidgator
                 </li>
-                <li>Sites that aren't primarily for anime but have it as a side product</li>
+                <li>
+                  Sites that aren't primarily for anime but have it as a side
+                  product
+                </li>
                 <li>Sites scraping only one source, such as gogo or zoro</li>
                 <li>Things that are too niche and/or have a small userbase</li>
               </ol>
             </details>
           </div>
-          <textarea
-            v-model="feedback.message"
-            autofocus
-            class="input"
-            placeholder="What a lovely wiki!" />
+          <textarea v-model="feedback.message" autofocus class="input" placeholder="What a lovely wiki!" />
           <p class="desc mb-2">
-            If you want a reply to your feedback, feel free to mention a contact in the message or
-            join our
-            <a
-              class="text-primary text-underline font-semibold"
-              href="https://discord.gg/wZMuSGpZ8s">
+            If you want a reply to your feedback, feel free to mention a contact
+            in the message or join our
+            <a class="text-primary text-underline font-semibold" href="https://discord.gg/wZMuSGpZ8s">
               Discord.
             </a>
           </p>
-          <button
-            type="submit"
-            class="btn btn-primary"
-            :disabled="isDisabled"
-            @click="handleSubmit()">
+          <button type="submit" class="btn btn-primary" :disabled="isDisabled" @click="handleSubmit()">
             Send Feedback 📩
           </button>
         </div>
@@ -299,7 +287,7 @@ const toggleCard = () => (isCardShown.value = !isCardShown.value)
 </template>
 
 <style scoped lang="css">
-.step > * + * {
+.step>*+* {
   margin-top: 1rem;
 }
 
